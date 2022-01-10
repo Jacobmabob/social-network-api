@@ -18,6 +18,9 @@ const reactionSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
+      get: function formatDate (date) {
+        return `${date.getMonth() + 1}-${date.getDate()}-${date.getFullYear()}`
+      }
     },
   },
   {

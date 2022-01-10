@@ -13,6 +13,9 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now(),
+      get: function formatDate (date) {
+        return `${date.getMonth() + 1}-${date.getDate()}-${date.getFullYear()}`
+      }
     },
     username: {
       type: String,
@@ -40,6 +43,6 @@ thoughtSchema
     return `${this.reactions.length}`
   });
 
-const Thought = model('course', thoughtSchema);
+const Thought = model('thought', thoughtSchema);
 
 module.exports = Thought;
