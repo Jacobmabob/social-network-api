@@ -30,7 +30,7 @@ module.exports = {
           { new: true}
         );
       })
-      .then((thought) => res.json(thought))
+      .then((user) => res.json(user))
       .catch((err) => {
         console.log(err);
         return res.status(500).json(err);
@@ -46,12 +46,12 @@ module.exports = {
           ? res.status(404).json({ message: 'No thought with that ID' })
           : res.json(thought)
       )
-      .then(() => res.json({ message: 'User and thoughts deleted' }))
+      .then(() => res.json({ message: 'Thought has been deleted' }))
       .catch((err) => res.status(500).json(err));
   },
 
 
-  // Update a course
+  // update a thought
   updateThought(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
@@ -89,7 +89,7 @@ module.exports = {
       .then((reaction) =>
         !reaction
           ? res.status(404).json({ message: 'No reaction with this id' })
-          : res.json(reaction)
+          : res.json({ message: 'Reaction has been deleted'})
       )
       .catch((err) => res.status(500).json(err));
   }
