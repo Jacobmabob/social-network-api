@@ -15,10 +15,6 @@ const reactionSchema = new Schema(
      type: String,
      required: true,
     },
-    userId: {
-      type: Number,
-      required: true, 
-    },
     createdAt: {
       type: Date,
       default: Date.now,
@@ -29,7 +25,7 @@ const reactionSchema = new Schema(
       getters: true,
       virtuals: true,
     },
-    id: false,
+    _id: false,
   }
 );
 

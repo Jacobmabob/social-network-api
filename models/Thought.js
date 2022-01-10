@@ -20,7 +20,7 @@ const thoughtSchema = new Schema(
 
     },
     userId: {
-      type: Number,
+      type: Schema.Types.ObjectId,
       required: true, 
     },
     reactions: [reactionSchema],
@@ -37,7 +37,7 @@ const thoughtSchema = new Schema(
 thoughtSchema
   .virtual('reactionCount')
   .get(function () {
-    return `${this.reactions}`
+    return `${this.reactions.length}`
   });
 
 const Thought = model('course', thoughtSchema);
