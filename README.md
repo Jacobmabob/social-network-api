@@ -57,5 +57,5 @@
   ## Questions
   Have any questions? Feel free to check out my github or send me an Email!
 
-  https://github.com/jacobmabob
+  https://github.com/jacobmabob <br>
   thejacobmccarthy@gmail.com
